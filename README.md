@@ -36,7 +36,10 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented required features:
 
-[![CourseStack Demo]()]()
+<a href="https://www.loom.com/share/420f596cb7784d21a6150485543868b5">
+  <img src="https://cdn.loom.com/images/originals/641e6fe08da14b188796a211d8b41461.jpg?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9jZG4ubG9vbS5jb20vaW1hZ2VzL29yaWdpbmFscy82NDFlNmZlMDhkYTE0YjE4ODc5NmEyMTFkOGI0MTQ2MS5qcGciLCJDb25kaXRpb24iOnsiRGF0ZUxlc3NUaGFuIjp7IkFXUzpFcG9jaFRpbWUiOjE3ODEwNzMyMjJ9fX1dfQ__&Key-Pair-Id=APKAJQIC5BGSW7XXK7FQ&Signature=Gq4Lmv8mBZrihP4JVGEvMqaiD6vwNR-uSEKEAKYrUOEhD1E62lfn3pjLqsjfm83gNt1hs1g0b0HPfAf23I661YoczU1gqzkxUIxvjQ-z0S0PQJgbOByQ503VsFCqOcieFZ4sKziw4bEIkMseeFvA4bkQGFsptuu2gELQP8x5OMfT2XyAEYVcStOdrOmUNYm0hl3CV6-sliGlMoti9llXTyWKmyRqX779c-yKmLX2KFbk2zluT7eIKa%7ExPS54qZ1YPr%7EQWpwfhvtvj8o9T9OYzxguMauPxSHefxzZXpzdeZexQvbIWcMJu8ZkhlSmtwS0hT8c-CgzAF-9RSmxt0bLZw__" width="600" alt="CourseStack Demo" />
+</a>
+
 
 <!-- Replace this with whatever GIF tool you used! -->
 Recorded with Loom
