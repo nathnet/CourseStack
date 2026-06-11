@@ -1,12 +1,23 @@
 const nav = document.getElementById("navbar");
 
 if (nav) {
-  nav.innerHTML = `
-    <ul>
-      <li><strong><a href="/">CourseStack</a></strong></li>
-    </ul>
-    <ul>
-      <li><a href="/">Courses</a></li>
-    </ul>
-  `;
+  const brandList = document.createElement("ul");
+  const brandItem = document.createElement("li");
+  const brandStrong = document.createElement("strong");
+  const brandLink = document.createElement("a");
+  brandLink.href = "/";
+  brandLink.textContent = "CourseStack";
+  brandStrong.append(brandLink);
+  brandItem.append(brandStrong);
+  brandList.append(brandItem);
+
+  const navList = document.createElement("ul");
+  const navItem = document.createElement("li");
+  const navLink = document.createElement("a");
+  navLink.href = "/";
+  navLink.textContent = "Courses";
+  navItem.append(navLink);
+  navList.append(navItem);
+
+  nav.append(brandList, navList);
 }
