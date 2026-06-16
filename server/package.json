@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "dev": "tsx --env-file=.env watch index.ts",
+    "dev": "tsx --env-file=.env --watch index.ts",
     "build": "tsc",
     "start": "node dist/index.js",
     "db:reset": "tsx --env-file=.env config/reset.ts"
