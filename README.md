@@ -4,7 +4,7 @@ Submitted by: **Nathachanok Netmaneesuk**
 
 About this web app: **A curated collection of high-signal software engineering courses handpicked for aspiring and practicing engineers. Served from a Render-hosted PostgreSQL database with filtering by provider, skill level, topic, and language.**
 
-Time spent: **5** hours
+Time spent: **7** hours
 
 ## Required Features
 
