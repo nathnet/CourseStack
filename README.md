@@ -19,15 +19,20 @@ The following **required** functionality is completed:
 
 The following **optional** features are implemented:
 
-- [ ] The user can search for items by a specific attribute
+- [x] The user can search for items by a specific attribute
 
 The following **additional** features are implemented:
 
-- [ ] Filter by multiple attributes simultaneously (provider, skill level, topic, language)
-- [ ] Filter options are fetched dynamically from the database — no hardcoded values
+- [x] Filter by multiple attributes simultaneously (provider, skill level, topic, language)
+- [x] Filter options are fetched dynamically from the database — no hardcoded values
 - [x] Full TypeScript on the server with strict types throughout
 - [x] Repository pattern separating SQL from HTTP controller logic
-- [ ] Dynamic parameterized WHERE clause — only active filters are included, no SQL injection risk
+- [x] Dynamic parameterized WHERE clause — only active filters are included, no SQL injection risk
+- [x] AbortController cancels stale in-flight filter requests at the network level
+- [x] Input length validation on all string inputs at the API boundary
+- [x] Subresource Integrity (SRI) on CDN stylesheet with pinned version
+- [x] Production security headers — CSP, X-Content-Type-Options, X-Frame-Options, Referrer-Policy
+- [x] PostgreSQL connection and query timeouts to prevent pool starvation
 
 ## Video Walkthrough
 
@@ -44,6 +49,10 @@ Here's a walkthrough of implemented required features:
 **Express 5 type widening** — Express 5 broadened `req.params` values from `string` to `string | string[]`. Calling `getCourseById(req.params.courseId)` produced a TypeScript error because the repository expects a `string`. Fixed by typing the route handler as `Request<{ courseId: string }>`.
 
 **SSL configuration** — Rather than hardcoding `ssl: { rejectUnauthorized: false }` in the Pool constructor, `PGSSLMODE=no-verify` is set in `.env`. The `pg` library reads this env var automatically, keeping all connection config in one place.
+
+**Route ordering** — Express matches routes in registration order, so literal segments must be registered before parameterized ones. `GET /api/courses/filters` must appear before `GET /api/courses/:courseId`, otherwise Express treats `filters` as a courseId and the endpoint is silently unreachable.
+
+**SRI and version pinning** — Using a range selector like `@picocss/pico@2` breaks Subresource Integrity because jsdelivr can resolve it to a newer patch version whose content no longer matches the hash, causing the browser to silently block the stylesheet. The version must be pinned to an exact release (e.g. `@2.0.6`) for SRI to work. Upgrading PicoCss in the future requires regenerating the hash with `curl -s <cdn-url> | openssl dgst -sha384 -binary | openssl base64 -A`.
 
 ## License
 

@@ -9,6 +9,27 @@ const __dirname: string = dirname(fileURLToPath(import.meta.url));
 const app: Express = express();
 const PORT: number | string = process.env.PORT ?? 3000;
 
+app.disable("x-powered-by");
+
+app.use((_req, res, next) => {
+  res.setHeader(
+    "Content-Security-Policy",
+    [
+      "default-src 'self'",
+      "style-src 'self' cdn.jsdelivr.net",
+      "img-src 'self' https:",
+      "script-src 'self'",
+      "connect-src 'self'",
+      "frame-ancestors 'none'",
+    ].join("; ")
+  );
+  res.setHeader("X-Content-Type-Options", "nosniff");
+  res.setHeader("X-Frame-Options", "DENY");
+  res.setHeader("Referrer-Policy", "no-referrer");
+  res.setHeader("X-XSS-Protection", "0");
+  next();
+});
+
 app.use(express.static(join(__dirname, "public")));
 app.use("/", pagesRouter);
 

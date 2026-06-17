@@ -6,7 +6,9 @@
     <title>CourseStack</title>
     <link
       rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2.0.6/css/pico.min.css"
+      integrity="sha384-7P0NVe9LPDbUCAF+fH2R8Egwz1uqNH83Ns/bfJY0fN2XCDBMUI2S9gGzIOIRBKsA"
+      crossorigin="anonymous"
     />
     <link rel="stylesheet" href="/styles.css" />
     <script type="module" src="/scripts/navbar.js"></script>
@@ -19,6 +21,22 @@
         <h1>CourseStack</h1>
         <p>A curated list of courses worth your time.</p>
       </header>
+      <form id="filters" role="search">
+        <div class="grid">
+          <select id="filter-provider" aria-label="Provider">
+            <option value="">All Providers</option>
+          </select>
+          <select id="filter-skill-level" aria-label="Skill Level">
+            <option value="">All Levels</option>
+          </select>
+          <select id="filter-topic" aria-label="Topic">
+            <option value="">All Topics</option>
+          </select>
+          <select id="filter-language" aria-label="Language">
+            <option value="">All Languages</option>
+          </select>
+        </div>
+      </form>
       <section id="course-list" aria-label="Course list"></section>
     </main>
   </body>
